@@ -1,103 +1,184 @@
 # Personal Finance Tracker
 
-Full-stack assignment project using React, Node.js, Express, PostgreSQL, Redis, JWT, RBAC, Recharts, rate limiting, and Swagger.
+A full-stack Personal Finance Tracker assignment project built with React, Node.js, Express, PostgreSQL, Redis, JWT authentication, RBAC, Recharts, rate limiting, and Swagger documentation.
+
+The application allows users to manage income and expenses, view analytics, and use role-based access control for admin, user, and read-only accounts.
+
+---
+
+## Project Overview
+
+This project is a Personal Finance Tracker application where users can:
+
+- Register and login securely
+- Manage income and expense transactions
+- Categorize transactions
+- Search transactions
+- View dashboard analytics
+- Access features based on user role
+- Use admin controls for user role management
+
+---
+
+## Tech Stack
+
+### Frontend
+
+- React 18+
+- React Router DOM
+- React Context API
+- React Hooks
+- Recharts
+- React Window
+- Axios
+- CSS
+
+### Backend
+
+- Node.js
+- Express.js
+- PostgreSQL
+- Redis
+- JWT
+- bcryptjs
+- express-rate-limit
+- Helmet
+- xss-clean
+- Swagger
+
+---
 
 ## Features
 
-- Register/Login
-- JWT authentication
-- RBAC: admin, user, read-only
-- Transaction CRUD
-- Read-only user can only view
-- Dashboard analytics
-- Pie, line, and bar charts
+### Authentication
+
+- User registration
+- User login
+- JWT-based authentication
+- Protected routes
+- Password hashing using bcrypt
+- Token-based API calling mechanism
+
+### Role-Based Access Control
+
+The application supports three roles:
+
+| Role | Access |
+|---|---|
+| admin | Full access, can manage users and data |
+| user | Can manage own transactions and view own analytics |
+| read-only | Can only view own transactions and analytics |
+
+### Role Management Logic
+
+- Admin can change users between `admin` and `user`
+- Admin page does not provide `read-only` as a role-changing option
+- Normal users can switch their own account between `user` and `read-only`
+- Read-only users cannot add, edit, or delete transactions
+- Read-only users can still view dashboard and transaction data
+
+### Transaction Management
+
+- Add income and expense transactions
+- Delete transactions
+- Categorize transactions
+- Search transactions by category or description
+- Role-based transaction access
+- Read-only users can view transactions only
+
+### Dashboard Analytics
+
+- Total income
+- Total expense
+- Net balance
+- Category-wise expense breakdown
+- Monthly income and expense trends
+- Income vs expense chart
+- Interactive charts using Recharts
+
+### Admin User Management
+
+- Admin-only users page
+- View all registered users
+- Promote user to admin
+- Demote admin to user
+- View user role status
+
+### Performance Features
+
+- Route-based lazy loading using `React.lazy()`
+- Loading states using `React.Suspense`
+- Virtual scrolling for large transaction lists using `react-window`
 - Redis caching for analytics
-- Rate limiting
-- Basic security with helmet, xss-clean, parameterized SQL queries
-- Swagger endpoint
+- Cache invalidation after transaction updates
+- Rate limiting for API endpoints
 
-## Setup
+### Security Features
 
-### 1. Database
+- JWT authentication
+- Protected backend routes
+- RBAC middleware
+- Password hashing
+- Helmet for secure headers
+- xss-clean for XSS protection
+- Parameterized SQL queries to prevent SQL injection
+- Rate limiting for API abuse protection
 
-Create PostgreSQL database:
+---
 
-```bash
-createdb finance_tracker
-```
+## Screenshots
 
-Run schema:
+### Login Page
 
-```bash
-psql -d finance_tracker -f backend/schema.sql
-```
+![Login Page](frontend/public/screenshots/Login%20Page.png)
 
-### 2. Redis
+### Register Page
 
-Run Redis locally:
+![Register Page](frontend/public/screenshots/Register%20Page.png)
 
-```bash
-redis-server
-```
+### Admin Dashboard
 
-### 3. Backend
+![Admin Dashboard](frontend/public/screenshots/Admin%20Dashboard.png)
 
-```bash
-cd backend
-cp .env.example .env
-npm install
-npm run dev
-```
+### Admin Users Page
 
-Backend runs on:
+![Admin Users Page](frontend/public/screenshots/Admin%20Dashboard%202.png)
 
-```txt
-http://localhost:5000
-```
+### User Dashboard
 
-Swagger:
+![User Dashboard](frontend/public/screenshots/User%20Dashboard.png)
 
-```txt
-http://localhost:5000/api-docs
-```
+### Read-only Dashboard
 
-### 4. Frontend
+![Read-only Dashboard](frontend/public/screenshots/read-only%20dashboard.png)
 
-```bash
-cd frontend
-npm install
-npm run dev
-```
+---
 
-Frontend runs on:
+## Folder Structure
 
 ```txt
-http://localhost:5173
-```
-
-## Test Roles
-
-During register, select:
-- admin
-- user
-- read-only
-
-In production, role selection should not be open to normal users. It is kept here only for assignment testing.
-
-## API Routes
-
-Auth:
-- POST /api/auth/register
-- POST /api/auth/login
-
-Transactions:
-- GET /api/transactions
-- POST /api/transactions
-- PUT /api/transactions/:id
-- DELETE /api/transactions/:id
-
-Analytics:
-- GET /api/analytics
-
-Users:
-- GET /api/users
+personal-finance-tracker/
+│
+├── backend/
+│   ├── config/
+│   ├── controllers/
+│   ├── middleware/
+│   ├── routes/
+│   ├── schema.sql
+│   ├── server.js
+│   └── package.json
+│
+├── frontend/
+│   ├── public/
+│   │   └── screenshots/
+│   ├── src/
+│   │   ├── api/
+│   │   ├── components/
+│   │   ├── context/
+│   │   ├── pages/
+│   │   ├── App.jsx
+│   │   └── style.css
+│   └── package.json
+│
+├── .gitignore
+└── README.md
