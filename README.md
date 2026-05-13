@@ -2,7 +2,7 @@
 
 ## 🚀 Live Demo
 
-### 🔗 [Open Personal Finance Tracker](https://loquacious-lokum-d2be12.netlify.app/)
+### 🔗 [Click here to open the Live Personal Finance Tracker](https://loquacious-lokum-d2be12.netlify.app/)
 
 A full-stack Personal Finance Tracker assignment project that allows users to manage income, expenses, and view financial analytics with role-based access control.
 
