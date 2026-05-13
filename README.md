@@ -130,27 +130,31 @@ The application supports three roles:
 
 ### Login Page
 
-![Login Page](frontend/public/screenshots/Login%20Page.png)
+## Screenshots
+
+### Login Page
+
+![Login Page](./frontend/public/screenshots/Login%20Page.png)
 
 ### Register Page
 
-![Register Page](frontend/public/screenshots/Register%20Page.png)
+![Register Page](./frontend/public/screenshots/Register%20Page.png)
 
 ### Admin Dashboard
 
-![Admin Dashboard](frontend/public/screenshots/Admin%20Dashboard.png)
+![Admin Dashboard](./frontend/public/screenshots/Admin%20Dashboard.png)
 
 ### Admin Users Page
 
-![Admin Users Page](frontend/public/screenshots/Admin%20Dashboard%202.png)
+![Admin Users Page](./frontend/public/screenshots/Admin%20Dashboard2.png)
 
 ### User Dashboard
 
-![User Dashboard](frontend/public/screenshots/User%20Dashboard.png)
+![User Dashboard](./frontend/public/screenshots/User%20Dashboard.png)
 
 ### Read-only Dashboard
 
-![Read-only Dashboard](frontend/public/screenshots/read-only%20dashboard.png)
+![Read-only Dashboard](./frontend/public/screenshots/read-only%20dashboard.png)
 
 ---
 
