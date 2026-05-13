@@ -150,11 +150,11 @@ The application supports three roles:
 
 ### User Dashboard
 
-![User Dashboard](./frontend/public/screenshots/User%20Dashboard.png)
+![User Dashboard](./frontend/public/screenshots/User%20Dashbaord.png)
 
 ### Read-only Dashboard
 
-![Read-only Dashboard](./frontend/public/screenshots/read-only%20dashboard.png)
+![Read-only Dashboard](./frontend/public/screenshots/read-only%20dashbaord.png)
 
 ---
 
