@@ -44,7 +44,7 @@ This project is a Personal Finance Tracker application where users can:
 - express-rate-limit
 - Helmet
 - xss-clean
-- Swagger
+- Swagger/OpenAPI
 
 ---
 
@@ -130,10 +130,6 @@ The application supports three roles:
 
 ### Login Page
 
-## Screenshots
-
-### Login Page
-
 ![Login Page](./frontend/public/screenshots/Login%20Page.png)
 
 ### Register Page
@@ -150,11 +146,11 @@ The application supports three roles:
 
 ### User Dashboard
 
-![User Dashboard](./frontend/public/screenshots/User%20Dashbaord.png)
+![User Dashboard](./frontend/public/screenshots/User%20Dashboard.png)
 
 ### Read-only Dashboard
 
-![Read-only Dashboard](./frontend/public/screenshots/read-only%20dashbaord.png)
+![Read-only Dashboard](./frontend/public/screenshots/read-only%20dashboard.png)
 
 ---
 
