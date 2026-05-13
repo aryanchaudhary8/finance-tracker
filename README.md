@@ -119,95 +119,15 @@ The application supports three roles:
 
 ## Documentation
 
-Detailed API documentation and local setup instructions are available here:
+Detailed API documentation and local setup instructions are available in a separate file:
 
 [View Documentation](./DOCUMENTATION.md)
 
-To view Swagger/OpenAPI documentation locally, clone the project and run the backend server.
+To view Swagger/OpenAPI documentation locally:
 
-### 1. Clone the Repository
+1. Clone the repository
+2. Run the backend server
+3. Open this URL in your browser:
 
-```bash
-git clone https://github.com/aryanchaudhary8/finance-tracker.git
-cd finance-tracker
-
-
-### 2. Install and Run Backend
-cd backend
-npm install
-npm run dev
-### 3. Open Swagger API Documentation
-
-After the backend server starts, open this URL in your browser:
-
+```txt
 http://localhost:5000/api-docs
-
-Swagger/OpenAPI documentation includes:
-
-Authentication APIs
-Transaction APIs
-Analytics APIs
-User management APIs
-Request body examples
-Response formats
-Protected route details
-Local Development Setup
-Backend Setup
-cd backend
-npm install
-npm run dev
-
-Backend runs on:
-
-http://localhost:5000
-Frontend Setup
-
-Open a new terminal:
-
-cd frontend
-npm install
-npm run dev
-
-Frontend runs on:
-
-http://localhost:5173
-Redis Setup
-
-Using Docker:
-
-docker run --name redis-server -p 6379:6379 -d redis
-
-Check Redis:
-
-docker exec -it redis-server redis-cli ping
-
-Expected output:
-
-PONG
-Folder Structure
-personal-finance-tracker/
-│
-├── backend/
-│   ├── config/
-│   ├── controllers/
-│   ├── middleware/
-│   ├── routes/
-│   ├── schema.sql
-│   ├── server.js
-│   └── package.json
-│
-├── frontend/
-│   ├── public/
-│   │   └── screenshots/
-│   ├── src/
-│   │   ├── api/
-│   │   ├── components/
-│   │   ├── context/
-│   │   ├── pages/
-│   │   ├── App.jsx
-│   │   └── style.css
-│   └── package.json
-│
-├── DOCUMENTATION.md
-├── .gitignore
-└── README.md
