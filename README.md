@@ -1,63 +1,41 @@
 # Personal Finance Tracker
 
-A full-stack Personal Finance Tracker assignment project built with React, Node.js, Express, PostgreSQL, Redis, JWT authentication, RBAC, Recharts, rate limiting, and Swagger documentation.
-
-The application allows users to manage income and expenses, view analytics, and use role-based access control for admin, user, and read-only accounts.
+A full-stack Personal Finance Tracker assignment project that allows users to manage income, expenses, and view financial analytics with role-based access control.
 
 ---
 
 ## Project Overview
 
-This project is a Personal Finance Tracker application where users can:
+This application allows users to:
 
-- Register and login securely
+- Register and login
 - Manage income and expense transactions
 - Categorize transactions
-- Search transactions
-- View dashboard analytics
-- Access features based on user role
+- Search and filter transactions
+- View financial analytics
+- Access features based on role
 - Use admin controls for user role management
 
 ---
 
-## Tech Stack
+## Tech Stack Requirements
 
-### Frontend
-
-- React 18+
-- React Router DOM
-- React Context API
-- React Hooks
-- Recharts
-- React Window
-- Axios
-- CSS
-
-### Backend
-
-- Node.js
-- Express.js
-- PostgreSQL
-- Redis
-- JWT
-- bcryptjs
-- express-rate-limit
-- Helmet
-- xss-clean
-- Swagger/OpenAPI
+- Frontend: React 18+
+- Backend: Node.js with Express.js
+- Database: PostgreSQL / MySQL
+- Caching: Redis
+- Charts: Chart.js or Recharts
 
 ---
 
-## Features
+## Features Implemented
 
-### Authentication
+### User Authentication
 
-- User registration
-- User login
+- User registration and login
 - JWT-based authentication
 - Protected routes
-- Password hashing using bcrypt
-- Token-based API calling mechanism
+- Role-Based Access Control
 
 ### Role-Based Access Control
 
@@ -65,64 +43,49 @@ The application supports three roles:
 
 | Role | Access |
 |---|---|
-| admin | Full access, can manage users and data |
-| user | Can manage own transactions and view own analytics |
-| read-only | Can only view own transactions and analytics |
+| admin | Full access to all features, including user and data management |
+| user | Can manage only their own transactions and view their own analytics |
+| read-only | Can only view their own transactions and analytics, but cannot add, edit, or delete anything |
 
 ### Role Management Logic
 
 - Admin can change users between `admin` and `user`
-- Admin page does not provide `read-only` as a role-changing option
-- Normal users can switch their own account between `user` and `read-only`
-- Read-only users cannot add, edit, or delete transactions
-- Read-only users can still view dashboard and transaction data
+- Admin cannot directly assign `read-only` from the users page
+- User can switch own account between `user` and `read-only`
+- Read-only user can switch back to `user`
+- Read-only users can view data only
 
 ### Transaction Management
 
 - Add income and expense transactions
 - Delete transactions
 - Categorize transactions
-- Search transactions by category or description
-- Role-based transaction access
-- Read-only users can view transactions only
+- Search and filter transactions
+- Read-only users can view transaction list only
 
-### Dashboard Analytics
+### Dashboard with Analytics
 
-- Total income
-- Total expense
-- Net balance
+- Monthly spending overview
 - Category-wise expense breakdown
-- Monthly income and expense trends
-- Income vs expense chart
-- Interactive charts using Recharts
-
-### Admin User Management
-
-- Admin-only users page
-- View all registered users
-- Promote user to admin
-- Demote admin to user
-- View user role status
+- Income vs expense trends
+- Interactive charts and graphs
+- Dashboard accessible to all roles
 
 ### Performance Features
 
-- Route-based lazy loading using `React.lazy()`
-- Loading states using `React.Suspense`
-- Virtual scrolling for large transaction lists using `react-window`
-- Redis caching for analytics
-- Cache invalidation after transaction updates
+- Lazy loading for pages/components
+- Virtual scrolling for transaction list
+- Redis caching for analytics data
 - Rate limiting for API endpoints
 
-### Security Features
+### Security
 
-- JWT authentication
+- JWT token-based API calling
 - Protected backend routes
-- RBAC middleware
+- Role-based middleware
 - Password hashing
-- Helmet for secure headers
-- xss-clean for XSS protection
-- Parameterized SQL queries to prevent SQL injection
-- Rate limiting for API abuse protection
+- XSS protection
+- SQL injection prevention using parameterized queries
 
 ---
 
@@ -154,9 +117,74 @@ The application supports three roles:
 
 ---
 
-## Folder Structure
+## Documentation
 
-```txt
+Detailed API documentation and local setup instructions are available here:
+
+[View Documentation](./DOCUMENTATION.md)
+
+To view Swagger/OpenAPI documentation locally, clone the project and run the backend server.
+
+### 1. Clone the Repository
+
+```bash
+git clone https://github.com/aryanchaudhary8/finance-tracker.git
+cd finance-tracker
+
+
+### 2. Install and Run Backend
+cd backend
+npm install
+npm run dev
+### 3. Open Swagger API Documentation
+
+After the backend server starts, open this URL in your browser:
+
+http://localhost:5000/api-docs
+
+Swagger/OpenAPI documentation includes:
+
+Authentication APIs
+Transaction APIs
+Analytics APIs
+User management APIs
+Request body examples
+Response formats
+Protected route details
+Local Development Setup
+Backend Setup
+cd backend
+npm install
+npm run dev
+
+Backend runs on:
+
+http://localhost:5000
+Frontend Setup
+
+Open a new terminal:
+
+cd frontend
+npm install
+npm run dev
+
+Frontend runs on:
+
+http://localhost:5173
+Redis Setup
+
+Using Docker:
+
+docker run --name redis-server -p 6379:6379 -d redis
+
+Check Redis:
+
+docker exec -it redis-server redis-cli ping
+
+Expected output:
+
+PONG
+Folder Structure
 personal-finance-tracker/
 │
 ├── backend/
@@ -180,5 +208,6 @@ personal-finance-tracker/
 │   │   └── style.css
 │   └── package.json
 │
+├── DOCUMENTATION.md
 ├── .gitignore
 └── README.md
