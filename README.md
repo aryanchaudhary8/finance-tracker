@@ -1,5 +1,9 @@
 # Personal Finance Tracker
 
+## 🚀 Live Demo
+
+### 🔗 [Open Personal Finance Tracker](https://loquacious-lokum-d2be12.netlify.app/)
+
 A full-stack Personal Finance Tracker assignment project that allows users to manage income, expenses, and view financial analytics with role-based access control.
 
 ---
@@ -29,6 +33,26 @@ This application allows users to:
 ---
 
 ## Features Implemented
+
+### Performance Metrics
+
+Upstash Redis is used to cache frequently accessed analytics data.
+
+Caching behavior:
+
+| Metric | Description |
+|---|---|
+| Cache provider | Upstash Redis |
+| Cached data | Dashboard analytics |
+| Cache duration | 15 minutes |
+| Cache invalidation | Cache is cleared when transactions are added or deleted |
+| Redis activity proof | Upstash metrics show GET, SETEX, DEL, EXISTS commands |
+
+The Upstash Redis dashboard confirms that the backend is using Redis commands such as `GET`, `SETEX`, and `DEL`, showing that analytics data is being cached and invalidated correctly.
+
+### Redis Caching Page
+
+![Redis Dashboard](./frontend/public/screenshots/Redis%20Dashboard.png)
 
 ### User Authentication
 
